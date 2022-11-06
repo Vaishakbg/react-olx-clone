@@ -11,7 +11,6 @@
   height="48px"
   viewBox="0 0 1024 1024"
   data-aut-id="icon"
-  className
   fillRule="evenodd"
 >
   <path
@@ -31,7 +30,6 @@
   height="25px"
   viewBox="0 0 1024 1024"
   data-aut-id="icon"
-  className
   fillRule="evenodd"
 >
   <path
@@ -51,7 +49,6 @@ width="24px"
 height="24px"
 viewBox="0 0 1024 1024"
 data-aut-id="icon"
-className
 fillRule="evenodd"
 >
 <path
@@ -103,7 +100,6 @@ width="16px"
 height="16px"
 viewBox="0 0 1024 1024"
 data-aut-id="icon"
-className
 fillRule="evenodd"
 >
 <path
@@ -122,8 +118,7 @@ fillRule="evenodd"
             height="24px"
             viewBox="0 0 1024 1024"
             data-aut-id="icon"
-            className
-            fillRule="evenodd"
+                      fillRule="evenodd"
           >
             <path
               className="rui-77aaa"
