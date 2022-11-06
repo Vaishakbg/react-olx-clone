@@ -9,42 +9,42 @@ export default function Signup() {
       <div className="signupParentDiv">
         <img width="200px" height="200px" src={Logo}></img>
         <form>
-          <label htmlFor="fname">Username</label>
+          <label htmlFor="uname">Username</label>
           <br />
           <input
             className="input"
             type="text"
-            id="fname"
+            id="uname"
             name="name"
             defaultValue="John"
           />
           <br />
-          <label htmlFor="fname">Email</label>
+          <label htmlFor="email">Email</label>
           <br />
           <input
             className="input"
             type="email"
-            id="fname"
+            id="email"
             name="email"
             defaultValue="John"
           />
           <br />
-          <label htmlFor="lname">Phone</label>
+          <label htmlFor="phone">Phone</label>
           <br />
           <input
             className="input"
             type="number"
-            id="lname"
+            id="phone"
             name="phone"
             defaultValue="Doe"
           />
           <br />
-          <label htmlFor="lname">Password</label>
+          <label htmlFor="password">Password</label>
           <br />
           <input
             className="input"
             type="password"
-            id="lname"
+            id="password"
             name="password"
             defaultValue="Doe"
           />
