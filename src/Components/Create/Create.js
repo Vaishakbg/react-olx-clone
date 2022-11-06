@@ -1,8 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import './Create.css';
 import Header from '../Header/Header';
 
 const Create = () => {
+  const [name, setName] = useState()
+  const [category, setCategory] = useState()
+  const [price, setPrice] = useState()
+  const [image, setImage] = useState()
   return (
     <Fragment>
       <Header />
@@ -16,22 +20,27 @@ const Create = () => {
               type="text"
               id="fname"
               name="Name"
-              defaultValue="John"
+              value={name}
+              onChange={(e)=> setName(e.target.value)}
             />
             <br />
-            <label htmlFor="fname">Category</label>
+            <label htmlFor="category">Category</label>
             <br />
             <input
               className="input"
               type="text"
-              id="fname"
+              id="category"
               name="category"
-              defaultValue="John"
+              value={category}
+              onChange={(e)=> setCategory(e.target.value)}
             />
             <br />
-            <label htmlFor="fname">Price</label>
+            <label htmlFor="price">Price</label>
             <br />
-            <input className="input" type="number" id="fname" name="Price" />
+            <input className="input" type="number" id="price" name="Price"
+            value={price}
+            onChange={(e)=> setPrice(e.target.value)}
+            />
             <br />
           </form>
           <br />

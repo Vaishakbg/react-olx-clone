@@ -1,10 +1,14 @@
 import React, { useContext, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 
 import Logo from "../../olx-logo.png";
 import "./Signup.css";
 import { FirebaseContext } from "../../store/FirebaseContext";
-import { addDoc, collection} from "firebase/firestore/lite";
+import { addDoc, collection } from "firebase/firestore/lite";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
@@ -18,10 +22,11 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormError('');
+    setFormError("");
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (userCredential) => {
+        updateProfile(auth.currentUser, { displayName: username });
         const uid = userCredential.user.uid;
         const data = {
           id: uid,
@@ -34,7 +39,7 @@ export default function Signup() {
         });
       })
       .catch((error) => {
-        setFormError(error.message)
+        setFormError(error.message);
       });
   };
   return (
@@ -43,7 +48,9 @@ export default function Signup() {
         <img width="200px" height="200px" src={Logo} alt="logo"></img>
         {formError && (
           <div>
-            <span style={{ color: "#d50606", fontSize: "12px" }}>{formError}</span>
+            <span style={{ color: "#d50606", fontSize: "12px" }}>
+              {formError}
+            </span>
           </div>
         )}
 
@@ -95,7 +102,7 @@ export default function Signup() {
           <br />
           <button type="submit">Signup</button>
         </form>
-        <Link to={'/login'}>Login</Link>
+        <Link to={"/login"}>Login</Link>
       </div>
     </div>
   );
