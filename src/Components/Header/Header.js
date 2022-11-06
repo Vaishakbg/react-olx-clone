@@ -52,7 +52,7 @@ function Header() {
         </div>
         <div className="loginPage">
           <span>
-            {user ? `Welcome ${user}` : <Link to="/login">Login</Link>}
+            {user ? `Welcome ${user.displayName}` : <Link to="/login">Login</Link>}
           </span>
           <hr />
         </div>

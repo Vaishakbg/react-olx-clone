@@ -21,7 +21,7 @@ function App() {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user.displayName)
+        setUser(user)
       }
     });
   });
