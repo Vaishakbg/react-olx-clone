@@ -17,7 +17,6 @@ function View() {
       });
     };
     getUserDetails();
-    console.log(userDetails);
   }, [])
   
   return (
