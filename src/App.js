@@ -14,6 +14,7 @@ import Home from "./Pages/Home";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Create from "./Pages/Create";
+import ViewPost from "./Pages/ViewPost";
 
 function App() {
   const { setUser } = useContext(AuthContext);
@@ -34,6 +35,7 @@ function App() {
           <Route element={<Signup />} path="/signup" />
           <Route element={<Login />} path="/login" />
           <Route element={<Create />} path="/create" />
+          <Route element={<ViewPost />} path="/view" />
         </Routes>
       </Router>
     </div>
