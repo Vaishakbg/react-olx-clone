@@ -24,7 +24,7 @@ function View() {
       <div className="imageShowDiv">
         <img
           src={postDetails.url}
-          alt=""
+          alt={postDetails.name}
         />
       </div>
       <div className="rightSection">
@@ -34,11 +34,13 @@ function View() {
           <p>{postDetails.category}</p>
           <span>{postDetails.createdAt}</span>
         </div>
-        <div className="contactDetails">
+        { userDetails &&
+          <div className="contactDetails">
           <p>Seller details</p>
           <p>{userDetails.username}</p>
           <p>{userDetails.phone}</p>
         </div>
+        }
       </div>
     </div>
   );

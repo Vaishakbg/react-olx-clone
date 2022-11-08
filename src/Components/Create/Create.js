@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import "./Create.css";
 import Header from "../Header/Header";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -16,12 +16,17 @@ const Create = () => {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
 
+  useEffect(() => {
+    if(!user){
+      navigate('/login')
+    }
+  }, [])
+  
   const handleSubmit = () => {
     const storageRef = ref(storage, `/images/${image.name}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
     uploadTask.on(
       "state_changed",
-
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           console.log(downloadURL);
@@ -36,7 +41,6 @@ const Create = () => {
           };
           console.log(user, data);
           addDoc(collection(firebase, "products"), data).then(() => {
-            console.log("product added!");
             navigate("/");
           });
         });
